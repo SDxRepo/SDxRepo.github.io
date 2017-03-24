@@ -1,1 +1,1052 @@
-Placeholder
+<!doctype html>
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.19" />
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>SportDx API Documentation</title>
+    <link href='http://apidocs.sportdx.github.com/slate/stylesheets/monokai.css' rel="stylesheet" media="screen" />
+<link href='http://apidocs.sportdx.github.com/slate/stylesheets/screen.css' rel="stylesheet" media="screen" />
+<link href='http://apidocs.sportdx.github.com/slate/stylesheets/print.css' rel="stylesheet" media="print" />
+
+    
+<script src='http://apidocs.sportdx.github.com/slate/javascripts/all.js'></script>
+
+    
+</head>
+<body class="index" data-languages="[ &#34;shell&#34; ]">
+    <a href="#" id="nav-button">
+        <span>
+        NAV
+        <img src='http://apidocs.sportdx.github.com/slate/images/navbar.png'/>
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src='http://apidocs.sportdx.github.com/images/logo.png' />
+        
+        <div class="lang-selector">
+            
+            <a href="#" data-language-name="shell">Shell</a>
+            
+        </div>
+         
+        
+        <div class="search">
+            <input type="text" class="search" id="input-search" placeholder='Search'>
+        </div>
+        <ul class="search-results"></ul>
+        
+        <div id="toc">
+        </div>
+         
+        
+        <ul class="toc-footer">
+            
+            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            
+            <li>Documentation Powered by <a href="https://github.com/bep/docuapi">DocuAPI</a></li>
+            
+            <li>Copyright SportDx Inc. All Rights Reserved.</li>
+            
+        </ul>
+        
+    </div>
+    <div class="page-wrapper">
+        <div class="dark-box"></div>
+        <div class="content">
+            
+    
+        
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Welcome to the SportDx API! Discover, Collaborate, and get it done!</p>
+
+<h3 id="all-calls-starting-with-s-api-require-authentication-token-in-the-header">All calls starting with <code>s-api</code> require authentication token in the header</h3>
+
+<h1 id="generic-api-calls">Generic API calls</h1>
+
+<h2 id="global-config">Global Config</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -i
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span> 
+  http://&lt;host&gt;/api/global-config
+</code></pre></div>
+
+<p>Get Global Config</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code>GET http://&lt;host&gt;/api/global-config</code></p>
+
+<aside class="notice">
+No need for headers here
+</aside>
+
+<h2 id="view-file">View File</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/view-file -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span> 
+  <span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="s2">&quot;sportx.log, sportx.err.log&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>View a file</p>
+
+<h3 id="http-request-1">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/view-file</code></p>
+
+    
+        
+
+<h1 id="user-registration">User Registration</h1>
+
+<h2 id="register-a-new-user">Register a new user</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span> 
+  http://&lt;host&gt;/api/register-user -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span> 
+  <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;*email*&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;*password*&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;cellPhone&quot;</span><span class="p">:</span><span class="s2">&quot;*cellPhone*&quot;</span> 
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Register a new user to the app.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code>POST http://&lt;host&gt;/api/register-user</code></p>
+
+<p>Password requirements:</p>
+
+<ul>
+<li><code>2 uppercase letters</code></li>
+<li><code>1 special case letter</code></li>
+<li><code>2 digits</code></li>
+<li><code>3 lowercase letters</code></li>
+<li><code>length 8 - 16</code></li>
+</ul>
+
+<aside class="notice">
+You will receieve an email with a code once you finish this call
+</aside>
+
+<h2 id="confirm-registration">Confirm Registration</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span> 
+  http://&lt;host&gt;/api/registration-confirm -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span> 
+  <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;*email*&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;*password*&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="s2">&quot;*code*&quot;</span> 
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Take the code that was sent in the email and pass it in.</p>
+
+<h3 id="http-request-1">HTTP Request</h3>
+
+<p><code>POST http://&lt;host&gt;/api/registration-confirm</code></p>
+
+<aside class="notice">
+The code will be valid for 1 day
+</aside>
+
+    
+        
+
+<h1 id="logging-in">Logging In</h1>
+
+<h2 id="authenticate-user">Authenticate User</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span> 
+  http://&lt;host&gt;/api/authenticate-user -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span> 
+  <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;*email*&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;*password*&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;user&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;*email&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;userId&quot;</span><span class="p">:</span> <span class="s2">&quot;*userId&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;firstName&quot;</span><span class="p">:</span> <span class="s2">&quot;*firstName&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;lastName&quot;</span><span class="p">:</span> <span class="s2">&quot;*lastName&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;middleName&quot;</span><span class="p">:</span> <span class="s2">&quot;*middleName&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sportId&quot;</span><span class="p">:</span> <span class="s2">&quot;*sportId&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;authToken&quot;</span><span class="p">:</span> <span class="s2">&quot;*authToken&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Log in to obtain a token (<code>authToken</code> field in the response object) and use this in the header for subsequent requests to <code>s-api</code> endpoints.</p>
+
+<p>E.g. <code>-H Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn</code></p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code>POST http://&lt;host&gt;/api/authenticate-user</code></p>
+
+<h2 id="forgot-password">Forgot Password</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span> 
+  http://&lt;host&gt;/api/forgot-password -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span> 
+  <span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="s2">&quot;*email*&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>User will recieve an email with the code once the call returns</p>
+
+<h3 id="http-request-1">HTTP Request</h3>
+
+<p><code>POST http://&lt;host&gt;/api/forgot-password</code></p>
+
+<h2 id="update-password">Update Password</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/api/change-password -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span> 
+  <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;currentPassword&quot;</span><span class="p">:</span><span class="s2">&quot;*currentPassword&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;newPassword&quot;</span><span class="p">:</span><span class="s2">&quot;*newPassword&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Updates the password for a given user</p>
+
+<aside class="notice">
+Be sure to place the authorization header even though this isn't an `s-api` endpoint.
+</aside>
+
+<h3 id="http-request-2">HTTP Request</h3>
+
+<p><code>POST http://&lt;host&gt;/api/change-password</code></p>
+
+<h2 id="log-out">Log Out</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/logout -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span> 
+  <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Logs the user out (invalidates the Bearer token)</p>
+
+<h3 id="http-request-3">HTTP Request</h3>
+
+<p><code>POST http://&lt;host&gt;/s-api/logout</code></p>
+
+    
+        
+
+<h1 id="user-management">User Management</h1>
+
+<h2 id="get-user-portfolio-status">Get User Portfolio Status</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/get-user-portfolio-status -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span> 
+  <span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;*user&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Get the current user&rsquo;s portfolio status</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/get-user-portfolio-status</code></p>
+
+<h2 id="get-user-s-watchlist-players">Get User&rsquo;s Watchlist players</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/watchlist-get-player-list -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span> 
+  <span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;*user&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Get the current user&rsquo;s watchlist players</p>
+
+<h3 id="http-request-1">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/watchlist-get-player-list</code></p>
+
+<h2 id="add-player-to-user-s-watchlist">Add player to User&rsquo;s Watchlist</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/watchlist-add-player -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="s2">&quot;*symbol&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;*user&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;entryTime&quot;</span><span class="p">:</span><span class="s2">&quot;*entryTime&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;endTime&quot;</span><span class="p">:</span><span class="s2">&quot;*endTime&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>entryTime and endTime format is: &ldquo;dd-MMM-yy&rdquo; e.g. &ldquo;03-JAN-17&rdquo;</p>
+</blockquote>
+
+<p>Add a player to the current user&rsquo;s watchlist</p>
+
+<h3 id="http-request-2">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/watchlist-add-player</code></p>
+
+<h2 id="remove-player-from-user-s-watchlist">Remove player from User&rsquo;s Watchlist</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/watchlist-remove-player -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="s2">&quot;*symbol&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;*user&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Remove the a player from the current user&rsquo;s watchlist</p>
+
+<h3 id="http-request-3">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/watchlist-remove-player</code></p>
+
+<h2 id="get-profile-picture">Get Profile Picture</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/get-profile-picture -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;profilePicture&quot;</span><span class="p">:</span><span class="s2">&quot;*base64String&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Get profile picture</p>
+
+<h3 id="http-request-4">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/get-profile-picture</code></p>
+
+<h2 id="update-profile-picture">Update Profile Picture</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/update-profile-picture -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;profilePicture&quot;</span><span class="p">:</span><span class="s2">&quot;*base64String&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Update profile picture</p>
+
+<h3 id="http-request-5">HTTP Request</h3>
+
+<p>POST `http://<host>/s-api/update-profile-picture</p>
+
+<h2 id="get-profile">Get Profile</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/get-profile -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;firstName&quot;</span><span class="p">:</span><span class="s2">&quot;*firstName&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;middleName&quot;</span><span class="p">:</span><span class="s2">&quot;*middleName&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;lastName&quot;</span><span class="p">:</span><span class="s2">&quot;*lastName&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;address1&quot;</span><span class="p">:</span><span class="s2">&quot;*address1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;address2&quot;</span><span class="p">:</span><span class="s2">&quot;*address2&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;address3&quot;</span><span class="p">:</span><span class="s2">&quot;*address3&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="s2">&quot;*city&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;*state&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;county&quot;</span><span class="p">:</span><span class="s2">&quot;*county&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;postalCode&quot;</span><span class="p">:</span><span class="s2">&quot;*postalCode&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;cellPhone&quot;</span><span class="p">:</span><span class="s2">&quot;*cellPhone&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;homePhone&quot;</span><span class="p">:</span><span class="s2">&quot;*homePhone&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;busPhone&quot;</span><span class="p">:</span><span class="s2">&quot;*busPhone&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Get basic metadata for a given user</p>
+
+<h3 id="http-request-6">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/get-profile</code></p>
+
+<h2 id="update-profile">Update Profile</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/update-profile -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;firstName&quot;</span><span class="p">:</span><span class="s2">&quot;*firstName&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;middleName&quot;</span><span class="p">:</span><span class="s2">&quot;*middleName&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;lastName&quot;</span><span class="p">:</span><span class="s2">&quot;*lastName&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;address1&quot;</span><span class="p">:</span><span class="s2">&quot;*address1&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;address2&quot;</span><span class="p">:</span><span class="s2">&quot;*address2&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;address3&quot;</span><span class="p">:</span><span class="s2">&quot;*address3&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;city&quot;</span><span class="p">:</span><span class="s2">&quot;*city&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;state&quot;</span><span class="p">:</span><span class="s2">&quot;*state&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;county&quot;</span><span class="p">:</span><span class="s2">&quot;*county&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;postalCode&quot;</span><span class="p">:</span><span class="s2">&quot;*postalCode&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;cellPhone&quot;</span><span class="p">:</span><span class="s2">&quot;*cellPhone&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;homePhone&quot;</span><span class="p">:</span><span class="s2">&quot;*homePhone&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;busPhone&quot;</span><span class="p">:</span><span class="s2">&quot;*busPhone&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Get basic metadata for a given user</p>
+
+<h3 id="http-request-7">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/update-profile</code></p>
+
+<aside class="notice">
+All parameters optional except for userId
+</aside>
+
+    
+        
+
+<h1 id="statistics">Statistics</h1>
+
+<h2 id="search-player">Search Player</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/search-player -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+    <span class="nt">&quot;searchText&quot;</span><span class="p">:</span><span class="s2">&quot;*searchText&quot;</span><span class="p">,</span>
+    <span class="err">[</span>
+        <span class="nt">&quot;sportId&quot;</span><span class="p">:</span><span class="s2">&quot;*sportId&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;teamName&quot;</span><span class="p">:</span><span class="s2">&quot;*teamName&quot;</span>
+    <span class="err">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Search for a player in the exchange</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/search-player</code></p>
+
+<h2 id="trending">Trending</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/trending -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+    <span class="nt">&quot;sportId&quot;</span><span class="p">:</span><span class="s2">&quot;*sportId&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Get the currently trending players for a given sport</p>
+
+<h3 id="http-request-1">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/trending</code></p>
+
+<h2 id="gainers">Gainers</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/gainers -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+    <span class="nt">&quot;sportId&quot;</span><span class="p">:</span><span class="s2">&quot;*sportId&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Get the current gainers for a given sport</p>
+
+<h3 id="http-request-2">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/gainers</code></p>
+
+<h2 id="losers">Losers</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/losers -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+    <span class="nt">&quot;sportId&quot;</span><span class="p">:</span><span class="s2">&quot;*sportId&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Get the current losers for a given sport</p>
+
+<h3 id="http-request-3">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/losers</code></p>
+
+    
+        
+
+<h1 id="the-exchange">The Exchange</h1>
+
+<h2 id="place-an-order">Place an Order</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/place-order -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+    <span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="s2">&quot;*symbol&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;orderId&quot;</span><span class="p">:</span><span class="s2">&quot;*orderId&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="s2">&quot;*orderType&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="s2">&quot;*price&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;quantity&quot;</span><span class="p">:</span><span class="s2">&quot;*quantity&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;stopPrice&quot;</span><span class="p">:</span><span class="s2">&quot;*stopPrice&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Place an order in the exchange.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/place-order</code></p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>symbol</td>
+<td>Player to place an order on</td>
+</tr>
+
+<tr>
+<td>userId</td>
+<td>current user</td>
+</tr>
+
+<tr>
+<td>orderId</td>
+<td>(leave blank)</td>
+</tr>
+
+<tr>
+<td>orderType</td>
+<td>(see below)</td>
+</tr>
+
+<tr>
+<td>price</td>
+<td>price point</td>
+</tr>
+
+<tr>
+<td>quantity</td>
+<td>amount of stock</td>
+</tr>
+
+<tr>
+<td>stopPrice</td>
+<td>the stop price</td>
+</tr>
+</tbody>
+</table>
+
+<p>Valid <code>orderType</code>s:</p>
+
+<ul>
+<li><code>MarketBuy</code></li>
+<li><code>LimitBuyDay</code></li>
+<li><code>LimitBuyGTC</code></li>
+<li><code>MarketSell</code></li>
+<li><code>LimitSellDay</code></li>
+<li><code>LimitSellGTC</code></li>
+<li><code>StopMarketSell</code></li>
+<li><code>StopLimitSell</code></li>
+<li><code>TrailingStopSell</code></li>
+<li><code>TrailingPCStopSell</code></li>
+</ul>
+
+<h2 id="cancel-an-order">Cancel an Order</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/cancel-order -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+    <span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="s2">&quot;*symbol&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;orderId&quot;</span><span class="p">:</span><span class="s2">&quot;*orderId&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;orderType&quot;</span><span class="p">:</span><span class="s2">&quot;*orderType&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Cancel an order in the exchange.</p>
+
+<h3 id="http-request-1">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/cancel-order</code></p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>symbol</td>
+<td>Player to place an order on</td>
+</tr>
+
+<tr>
+<td>userId</td>
+<td>current user</td>
+</tr>
+
+<tr>
+<td>orderId</td>
+<td>Id of the order to cancel</td>
+</tr>
+
+<tr>
+<td>orderType</td>
+<td>(see below)</td>
+</tr>
+</tbody>
+</table>
+
+<p>Valid <code>orderType</code>s:</p>
+
+<ul>
+<li><code>LimitBuyDay</code></li>
+<li><code>LimitBuyGTC</code></li>
+<li><code>StopMarketBuy</code></li>
+<li><code>StopLimitBuy</code></li>
+<li><code>TrailingStopBuy</code></li>
+<li><code>TrailingPCStopBuy</code></li>
+<li><code>LimitSellDay</code></li>
+<li><code>LimitSellGTC</code></li>
+<li><code>StopMarketSell</code></li>
+<li><code>StopLimitSell</code></li>
+<li><code>TrailingStopSell</code></li>
+<li><code>TrailingPCStopSell</code></li>
+</ul>
+
+<h2 id="prepare-to-trade">Prepare to Trade</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/prepare-to-trade -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+    <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;symbol&quot;</span><span class="p">:</span><span class="s2">&quot;*symbol&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Prepare to trade for a given athlete</p>
+
+<h3 id="http-request-2">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/prepare-to-trade</code></p>
+
+    
+        
+
+<h1 id="articles">Articles</h1>
+
+<h2 id="get-articles-likes">Get Articles Likes</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/get-articles-likes -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+    <span class="nt">&quot;articleId&quot;</span><span class="p">:</span><span class="s2">&quot;*articleId&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Get likes for a given article</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/get-articles-likes</code></p>
+
+<h2 id="like-an-article">Like an Article</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/add-articles-likes -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+    <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;articleId&quot;</span><span class="p">:</span><span class="s2">&quot;*articleId&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;comment&quot;</span><span class="p">:</span><span class="s2">&quot;*comment&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Like an article</p>
+
+<h3 id="http-request-1">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/add-articles-likes</code></p>
+
+<h2 id="update-article-like">Update Article Like</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/update-articles-likes -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+    <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;articleId&quot;</span><span class="p">:</span><span class="s2">&quot;*articleId&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;isLike&quot;</span><span class="p">:</span><span class="s2">&quot;*isLike&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Updates whether a user liked the specified article</p>
+
+<h3 id="http-request-2">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/update-articles-likes</code></p>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>userId</td>
+<td>The current user&rsquo;s id</td>
+</tr>
+
+<tr>
+<td>articleId</td>
+<td>The article to update</td>
+</tr>
+
+<tr>
+<td>isLike</td>
+<td>An integer: <code>1</code> for like. <code>0</code> to remove the like</td>
+</tr>
+</tbody>
+</table>
+
+    
+        
+
+<h1 id="payments">Payments</h1>
+
+<h2 id="get-credit-card-details">Get Credit Card Details</h2>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>curl -X POST 
+  -H <span class="s2">&quot;Accept: application/json&quot;</span>
+  -H <span class="s2">&quot;Content-Type: application/json&quot;</span>
+  -H <span class="s2">&quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&quot;</span>
+  http://&lt;host&gt;/s-api/get-credit-card-details -d <span class="s2">&quot;&lt;BODY&gt;&quot;</span>
+</code></pre></div>
+
+<blockquote>
+<p>Body structure:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+    <span class="nt">&quot;userId&quot;</span><span class="p">:</span><span class="s2">&quot;*userId&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span></span><span class="p">{</span>
+  <span class="nt">&quot;cardData&quot;</span><span class="p">:</span>
+  <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;cardNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;*cardNumber&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;cardType&quot;</span><span class="p">:</span> <span class="s2">&quot;*cardType&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;cardCode&quot;</span><span class="p">:</span> <span class="s2">&quot;*cardCode&quot;</span><span class="p">,</span>
+    <span class="p">},</span> 
+    <span class="p">{</span>
+      <span class="nt">&quot;cardNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;*cardNumber&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;cardType&quot;</span><span class="p">:</span> <span class="s2">&quot;*cardType&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;cardCode&quot;</span><span class="p">:</span> <span class="s2">&quot;*cardCode&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="err">...</span>
+  <span class="p">],</span>
+  <span class="nt">&quot;coinBalance&quot;</span><span class="p">:</span> <span class="s2">&quot;*coinBalance&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;accountBalance&quot;</span><span class="p">:</span> <span class="s2">&quot;*accountBalance&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Get some non-sensitive credit card details</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p>POST <code>http://&lt;host&gt;/s-api/get-credit-card-details</code></p>
+
+<aside class="warning">
+We do NOT store sensitive data. `cardNumber` would be just the last 4 digits.
+</aside>
+
+    
+        
+
+<h1 id="errors">Errors</h1>
+
+<aside class="notice">Common API Errors should generally align with the industry standard</aside>
+
+<p>The SportDx API uses the following error codes:</p>
+
+<table>
+<thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; Your request sucks</td>
+</tr>
+
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Your API key is wrong</td>
+</tr>
+
+<tr>
+<td>403</td>
+<td>Forbidden &ndash; For administrators only</td>
+</tr>
+
+<tr>
+<td>404</td>
+<td>Not Found &ndash; The specified endpoint could not be found</td>
+</tr>
+
+<tr>
+<td>405</td>
+<td>Method Not Allowed &ndash; You tried to access an endpoint with an invalid method</td>
+</tr>
+
+<tr>
+<td>406</td>
+<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
+</tr>
+
+<tr>
+<td>410</td>
+<td>Gone &ndash; The endpoint requested has been removed from our servers</td>
+</tr>
+
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+</tr>
+</tbody>
+</table>
+
+    
+
+        </div>
+        <div class="dark-box">
+            
+            <div class="lang-selector">
+                
+                <a href="#" data-language-name="shell">Shell</a>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
