@@ -1,0 +1,1053 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SportDx API Documentation</title>
+    <link>http://apidocs.sportdx.github.com/index.xml</link>
+    <description>Recent content on SportDx API Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="http://apidocs.sportdx.github.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SportDx API Reference</title>
+      <link>http://apidocs.sportdx.github.com/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://apidocs.sportdx.github.com/</guid>
+      <description>
+
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;Welcome to the SportDx API! Discover, Collaborate, and get it done!&lt;/p&gt;
+
+&lt;h3 id=&#34;all-calls-starting-with-s-api-require-authentication-token-in-the-header&#34;&gt;All calls starting with &lt;code&gt;s-api&lt;/code&gt; require authentication token in the header&lt;/h3&gt;
+
+&lt;h1 id=&#34;generic-api-calls&#34;&gt;Generic API calls&lt;/h1&gt;
+
+&lt;h2 id=&#34;global-config&#34;&gt;Global Config&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -i
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt; 
+  http://&amp;lt;host&amp;gt;/api/global-config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Get Global Config&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;GET http://&amp;lt;host&amp;gt;/api/global-config&lt;/code&gt;&lt;/p&gt;
+
+&lt;aside class=&#34;notice&#34;&gt;
+No need for headers here
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;view-file&#34;&gt;View File&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/view-file -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; 
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;path&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;sportx.log, sportx.err.log&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;View a file&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-1&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/view-file&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>User Registration</title>
+      <link>http://apidocs.sportdx.github.com/user-registration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://apidocs.sportdx.github.com/user-registration/</guid>
+      <description>
+
+&lt;h1 id=&#34;user-registration&#34;&gt;User Registration&lt;/h1&gt;
+
+&lt;h2 id=&#34;register-a-new-user&#34;&gt;Register a new user&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt; 
+  http://&amp;lt;host&amp;gt;/api/register-user -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; 
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;email&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*email*&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;password&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*password*&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;cellPhone&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*cellPhone*&amp;quot;&lt;/span&gt; 
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Register a new user to the app.&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;POST http://&amp;lt;host&amp;gt;/api/register-user&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Password requirements:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;2 uppercase letters&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1 special case letter&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2 digits&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;3 lowercase letters&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;length 8 - 16&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;aside class=&#34;notice&#34;&gt;
+You will receieve an email with a code once you finish this call
+&lt;/aside&gt;
+
+&lt;h2 id=&#34;confirm-registration&#34;&gt;Confirm Registration&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt; 
+  http://&amp;lt;host&amp;gt;/api/registration-confirm -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; 
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;email&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*email*&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;password&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*password*&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;code&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*code*&amp;quot;&lt;/span&gt; 
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Take the code that was sent in the email and pass it in.&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-1&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;POST http://&amp;lt;host&amp;gt;/api/registration-confirm&lt;/code&gt;&lt;/p&gt;
+
+&lt;aside class=&#34;notice&#34;&gt;
+The code will be valid for 1 day
+&lt;/aside&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Logging In</title>
+      <link>http://apidocs.sportdx.github.com/logging-in/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://apidocs.sportdx.github.com/logging-in/</guid>
+      <description>
+
+&lt;h1 id=&#34;logging-in&#34;&gt;Logging In&lt;/h1&gt;
+
+&lt;h2 id=&#34;authenticate-user&#34;&gt;Authenticate User&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt; 
+  http://&amp;lt;host&amp;gt;/api/authenticate-user -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; 
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;email&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*email*&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;password&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*password*&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The above command returns JSON structured like this:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;user&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;email&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*email&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;firstName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*firstName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;lastName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*lastName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;middleName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*middleName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;sportId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*sportId&amp;quot;&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;authToken&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*authToken&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Log in to obtain a token (&lt;code&gt;authToken&lt;/code&gt; field in the response object) and use this in the header for subsequent requests to &lt;code&gt;s-api&lt;/code&gt; endpoints.&lt;/p&gt;
+
+&lt;p&gt;E.g. &lt;code&gt;-H Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;POST http://&amp;lt;host&amp;gt;/api/authenticate-user&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;forgot-password&#34;&gt;Forgot Password&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt; 
+  http://&amp;lt;host&amp;gt;/api/forgot-password -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; 
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;email&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*email*&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;User will recieve an email with the code once the call returns&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-1&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;POST http://&amp;lt;host&amp;gt;/api/forgot-password&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;update-password&#34;&gt;Update Password&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/api/change-password -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; 
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;currentPassword&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*currentPassword&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;newPassword&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*newPassword&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Updates the password for a given user&lt;/p&gt;
+
+&lt;aside class=&#34;notice&#34;&gt;
+Be sure to place the authorization header even though this isn&#39;t an `s-api` endpoint.
+&lt;/aside&gt;
+
+&lt;h3 id=&#34;http-request-2&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;POST http://&amp;lt;host&amp;gt;/api/change-password&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;log-out&#34;&gt;Log Out&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/logout -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; 
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Logs the user out (invalidates the Bearer token)&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-3&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;POST http://&amp;lt;host&amp;gt;/s-api/logout&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>User Management</title>
+      <link>http://apidocs.sportdx.github.com/user-management/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://apidocs.sportdx.github.com/user-management/</guid>
+      <description>
+
+&lt;h1 id=&#34;user-management&#34;&gt;User Management&lt;/h1&gt;
+
+&lt;h2 id=&#34;get-user-portfolio-status&#34;&gt;Get User Portfolio Status&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/get-user-portfolio-status -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; 
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;user&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*user&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Get the current user&amp;rsquo;s portfolio status&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/get-user-portfolio-status&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;get-user-s-watchlist-players&#34;&gt;Get User&amp;rsquo;s Watchlist players&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/watchlist-get-player-list -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; 
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;user&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*user&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Get the current user&amp;rsquo;s watchlist players&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-1&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/watchlist-get-player-list&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;add-player-to-user-s-watchlist&#34;&gt;Add player to User&amp;rsquo;s Watchlist&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/watchlist-add-player -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;symbol&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*symbol&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;user&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*user&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;entryTime&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*entryTime&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;endTime&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*endTime&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;entryTime and endTime format is: &amp;ldquo;dd-MMM-yy&amp;rdquo; e.g. &amp;ldquo;03-JAN-17&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Add a player to the current user&amp;rsquo;s watchlist&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-2&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/watchlist-add-player&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;remove-player-from-user-s-watchlist&#34;&gt;Remove player from User&amp;rsquo;s Watchlist&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/watchlist-remove-player -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;symbol&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*symbol&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;user&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*user&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Remove the a player from the current user&amp;rsquo;s watchlist&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-3&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/watchlist-remove-player&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;get-profile-picture&#34;&gt;Get Profile Picture&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/get-profile-picture -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The above command returns JSON structured like this:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;profilePicture&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*base64String&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Get profile picture&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-4&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/get-profile-picture&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;update-profile-picture&#34;&gt;Update Profile Picture&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/update-profile-picture -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;profilePicture&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*base64String&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Update profile picture&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-5&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST `http://&lt;host&gt;/s-api/update-profile-picture&lt;/p&gt;
+
+&lt;h2 id=&#34;get-profile&#34;&gt;Get Profile&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/get-profile -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The above command returns JSON structured like this:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;firstName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*firstName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;middleName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*middleName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;lastName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*lastName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;address1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*address1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;address2&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*address2&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;address3&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*address3&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;city&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*city&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;state&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*state&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;county&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*county&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;postalCode&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*postalCode&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;cellPhone&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*cellPhone&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;homePhone&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*homePhone&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;busPhone&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*busPhone&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Get basic metadata for a given user&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-6&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/get-profile&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;update-profile&#34;&gt;Update Profile&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/update-profile -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;firstName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*firstName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;middleName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*middleName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;lastName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*lastName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;address1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*address1&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;address2&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*address2&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;address3&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*address3&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;city&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*city&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;state&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*state&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;county&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*county&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;postalCode&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*postalCode&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;cellPhone&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*cellPhone&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;homePhone&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*homePhone&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;busPhone&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*busPhone&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Get basic metadata for a given user&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-7&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/update-profile&lt;/code&gt;&lt;/p&gt;
+
+&lt;aside class=&#34;notice&#34;&gt;
+All parameters optional except for userId
+&lt;/aside&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>http://apidocs.sportdx.github.com/statistics/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://apidocs.sportdx.github.com/statistics/</guid>
+      <description>
+
+&lt;h1 id=&#34;statistics&#34;&gt;Statistics&lt;/h1&gt;
+
+&lt;h2 id=&#34;search-player&#34;&gt;Search Player&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/search-player -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;searchText&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*searchText&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;err&#34;&gt;[&lt;/span&gt;
+        &lt;span class=&#34;nt&#34;&gt;&amp;quot;sportId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*sportId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+        &lt;span class=&#34;nt&#34;&gt;&amp;quot;teamName&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*teamName&amp;quot;&lt;/span&gt;
+    &lt;span class=&#34;err&#34;&gt;]&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Search for a player in the exchange&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/search-player&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;trending&#34;&gt;Trending&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/trending -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;sportId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*sportId&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Get the currently trending players for a given sport&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-1&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/trending&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;gainers&#34;&gt;Gainers&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/gainers -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;sportId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*sportId&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Get the current gainers for a given sport&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-2&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/gainers&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;losers&#34;&gt;Losers&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/losers -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;sportId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*sportId&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Get the current losers for a given sport&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-3&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/losers&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Exchange</title>
+      <link>http://apidocs.sportdx.github.com/the-exchange/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://apidocs.sportdx.github.com/the-exchange/</guid>
+      <description>
+
+&lt;h1 id=&#34;the-exchange&#34;&gt;The Exchange&lt;/h1&gt;
+
+&lt;h2 id=&#34;place-an-order&#34;&gt;Place an Order&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/place-order -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;symbol&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*symbol&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;orderId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*orderId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;orderType&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*orderType&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;price&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*price&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;quantity&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*quantity&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;stopPrice&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*stopPrice&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Place an order in the exchange.&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/place-order&lt;/code&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;symbol&lt;/td&gt;
+&lt;td&gt;Player to place an order on&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;userId&lt;/td&gt;
+&lt;td&gt;current user&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;orderId&lt;/td&gt;
+&lt;td&gt;(leave blank)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;orderType&lt;/td&gt;
+&lt;td&gt;(see below)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;price&lt;/td&gt;
+&lt;td&gt;price point&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;quantity&lt;/td&gt;
+&lt;td&gt;amount of stock&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;stopPrice&lt;/td&gt;
+&lt;td&gt;the stop price&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Valid &lt;code&gt;orderType&lt;/code&gt;s:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;MarketBuy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LimitBuyDay&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LimitBuyGTC&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MarketSell&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LimitSellDay&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LimitSellGTC&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StopMarketSell&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StopLimitSell&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TrailingStopSell&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TrailingPCStopSell&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;cancel-an-order&#34;&gt;Cancel an Order&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/cancel-order -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;symbol&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*symbol&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;orderId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*orderId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;orderType&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*orderType&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Cancel an order in the exchange.&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-1&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/cancel-order&lt;/code&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;symbol&lt;/td&gt;
+&lt;td&gt;Player to place an order on&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;userId&lt;/td&gt;
+&lt;td&gt;current user&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;orderId&lt;/td&gt;
+&lt;td&gt;Id of the order to cancel&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;orderType&lt;/td&gt;
+&lt;td&gt;(see below)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Valid &lt;code&gt;orderType&lt;/code&gt;s:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;LimitBuyDay&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LimitBuyGTC&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StopMarketBuy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StopLimitBuy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TrailingStopBuy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TrailingPCStopBuy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LimitSellDay&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;LimitSellGTC&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StopMarketSell&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;StopLimitSell&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TrailingStopSell&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;TrailingPCStopSell&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;prepare-to-trade&#34;&gt;Prepare to Trade&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/prepare-to-trade -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;symbol&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*symbol&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Prepare to trade for a given athlete&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-2&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/prepare-to-trade&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Articles</title>
+      <link>http://apidocs.sportdx.github.com/articles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://apidocs.sportdx.github.com/articles/</guid>
+      <description>
+
+&lt;h1 id=&#34;articles&#34;&gt;Articles&lt;/h1&gt;
+
+&lt;h2 id=&#34;get-articles-likes&#34;&gt;Get Articles Likes&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/get-articles-likes -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;articleId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*articleId&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Get likes for a given article&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/get-articles-likes&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;like-an-article&#34;&gt;Like an Article&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/add-articles-likes -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;articleId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*articleId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;comment&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*comment&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Like an article&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-1&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/add-articles-likes&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;update-article-like&#34;&gt;Update Article Like&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/update-articles-likes -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;articleId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*articleId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;isLike&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*isLike&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Updates whether a user liked the specified article&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request-2&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/update-articles-likes&lt;/code&gt;&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;userId&lt;/td&gt;
+&lt;td&gt;The current user&amp;rsquo;s id&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;articleId&lt;/td&gt;
+&lt;td&gt;The article to update&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;isLike&lt;/td&gt;
+&lt;td&gt;An integer: &lt;code&gt;1&lt;/code&gt; for like. &lt;code&gt;0&lt;/code&gt; to remove the like&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Payments</title>
+      <link>http://apidocs.sportdx.github.com/payments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://apidocs.sportdx.github.com/payments/</guid>
+      <description>
+
+&lt;h1 id=&#34;payments&#34;&gt;Payments&lt;/h1&gt;
+
+&lt;h2 id=&#34;get-credit-card-details&#34;&gt;Get Credit Card Details&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span&gt;&lt;/span&gt;curl -X POST 
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Accept: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Content-Type: application/json&amp;quot;&lt;/span&gt;
+  -H &lt;span class=&#34;s2&#34;&gt;&amp;quot;Authorization: Bearer 3oo3irj23r9ewjf03fa309rj23leljfkfxfn&amp;quot;&lt;/span&gt;
+  http://&amp;lt;host&amp;gt;/s-api/get-credit-card-details -d &lt;span class=&#34;s2&#34;&gt;&amp;quot;&amp;lt;BODY&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Body structure:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;nt&#34;&gt;&amp;quot;userId&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;*userId&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The above command returns JSON structured like this:&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;cardData&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+      &lt;span class=&#34;nt&#34;&gt;&amp;quot;cardNumber&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*cardNumber&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;nt&#34;&gt;&amp;quot;cardType&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*cardType&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;nt&#34;&gt;&amp;quot;cardCode&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*cardCode&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt; 
+    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+      &lt;span class=&#34;nt&#34;&gt;&amp;quot;cardNumber&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*cardNumber&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;nt&#34;&gt;&amp;quot;cardType&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*cardType&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+      &lt;span class=&#34;nt&#34;&gt;&amp;quot;cardCode&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*cardCode&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+    &lt;span class=&#34;err&#34;&gt;...&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;coinBalance&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*coinBalance&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;nt&#34;&gt;&amp;quot;accountBalance&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;*accountBalance&amp;quot;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Get some non-sensitive credit card details&lt;/p&gt;
+
+&lt;h3 id=&#34;http-request&#34;&gt;HTTP Request&lt;/h3&gt;
+
+&lt;p&gt;POST &lt;code&gt;http://&amp;lt;host&amp;gt;/s-api/get-credit-card-details&lt;/code&gt;&lt;/p&gt;
+
+&lt;aside class=&#34;warning&#34;&gt;
+We do NOT store sensitive data. `cardNumber` would be just the last 4 digits.
+&lt;/aside&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Errors</title>
+      <link>http://apidocs.sportdx.github.com/errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://apidocs.sportdx.github.com/errors/</guid>
+      <description>
+
+&lt;h1 id=&#34;errors&#34;&gt;Errors&lt;/h1&gt;
+
+&lt;aside class=&#34;notice&#34;&gt;Common API Errors should generally align with the industry standard&lt;/aside&gt;
+
+&lt;p&gt;The SportDx API uses the following error codes:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Error Code&lt;/th&gt;
+&lt;th&gt;Meaning&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;400&lt;/td&gt;
+&lt;td&gt;Bad Request &amp;ndash; Your request sucks&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;401&lt;/td&gt;
+&lt;td&gt;Unauthorized &amp;ndash; Your API key is wrong&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;403&lt;/td&gt;
+&lt;td&gt;Forbidden &amp;ndash; For administrators only&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;404&lt;/td&gt;
+&lt;td&gt;Not Found &amp;ndash; The specified endpoint could not be found&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;405&lt;/td&gt;
+&lt;td&gt;Method Not Allowed &amp;ndash; You tried to access an endpoint with an invalid method&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;406&lt;/td&gt;
+&lt;td&gt;Not Acceptable &amp;ndash; You requested a format that isn&amp;rsquo;t json&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;410&lt;/td&gt;
+&lt;td&gt;Gone &amp;ndash; The endpoint requested has been removed from our servers&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;500&lt;/td&gt;
+&lt;td&gt;Internal Server Error &amp;ndash; We had a problem with our server. Try again later.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;503&lt;/td&gt;
+&lt;td&gt;Service Unavailable &amp;ndash; We&amp;rsquo;re temporarially offline for maintanance. Please try again later.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

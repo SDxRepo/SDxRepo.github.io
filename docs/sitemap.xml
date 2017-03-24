@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://apidocs.sportdx.github.com/</loc>
+  </url>
+  
+  <url>
+    <loc>http://apidocs.sportdx.github.com/user-registration/</loc>
+  </url>
+  
+  <url>
+    <loc>http://apidocs.sportdx.github.com/logging-in/</loc>
+  </url>
+  
+  <url>
+    <loc>http://apidocs.sportdx.github.com/user-management/</loc>
+  </url>
+  
+  <url>
+    <loc>http://apidocs.sportdx.github.com/statistics/</loc>
+  </url>
+  
+  <url>
+    <loc>http://apidocs.sportdx.github.com/the-exchange/</loc>
+  </url>
+  
+  <url>
+    <loc>http://apidocs.sportdx.github.com/articles/</loc>
+  </url>
+  
+  <url>
+    <loc>http://apidocs.sportdx.github.com/payments/</loc>
+  </url>
+  
+  <url>
+    <loc>http://apidocs.sportdx.github.com/errors/</loc>
+  </url>
+  
+  <url>
+    <loc>http://apidocs.sportdx.github.com/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
