@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SportDx API Documentation</title>
-    <link>http://apidocs.sportdx.github.com/index.xml</link>
+    <link>https://sdxrepo.github.io/index.xml</link>
     <description>Recent content on SportDx API Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://apidocs.sportdx.github.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sdxrepo.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>SportDx API Reference</title>
-      <link>http://apidocs.sportdx.github.com/</link>
+      <link>https://sdxrepo.github.io/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://apidocs.sportdx.github.com/</guid>
+      <guid>https://sdxrepo.github.io/</guid>
       <description>
 
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
@@ -67,10 +67,10 @@ No need for headers here
     
     <item>
       <title>User Registration</title>
-      <link>http://apidocs.sportdx.github.com/user-registration/</link>
+      <link>https://sdxrepo.github.io/user-registration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://apidocs.sportdx.github.com/user-registration/</guid>
+      <guid>https://sdxrepo.github.io/user-registration/</guid>
       <description>
 
 &lt;h1 id=&#34;user-registration&#34;&gt;User Registration&lt;/h1&gt;
@@ -143,10 +143,10 @@ The code will be valid for 1 day
     
     <item>
       <title>Logging In</title>
-      <link>http://apidocs.sportdx.github.com/logging-in/</link>
+      <link>https://sdxrepo.github.io/logging-in/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://apidocs.sportdx.github.com/logging-in/</guid>
+      <guid>https://sdxrepo.github.io/logging-in/</guid>
       <description>
 
 &lt;h1 id=&#34;logging-in&#34;&gt;Logging In&lt;/h1&gt;
@@ -266,10 +266,10 @@ Be sure to place the authorization header even though this isn&#39;t an `s-api` 
     
     <item>
       <title>User Management</title>
-      <link>http://apidocs.sportdx.github.com/user-management/</link>
+      <link>https://sdxrepo.github.io/user-management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://apidocs.sportdx.github.com/user-management/</guid>
+      <guid>https://sdxrepo.github.io/user-management/</guid>
       <description>
 
 &lt;h1 id=&#34;user-management&#34;&gt;User Management&lt;/h1&gt;
@@ -509,10 +509,10 @@ All parameters optional except for userId
     
     <item>
       <title>Statistics</title>
-      <link>http://apidocs.sportdx.github.com/statistics/</link>
+      <link>https://sdxrepo.github.io/statistics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://apidocs.sportdx.github.com/statistics/</guid>
+      <guid>https://sdxrepo.github.io/statistics/</guid>
       <description>
 
 &lt;h1 id=&#34;statistics&#34;&gt;Statistics&lt;/h1&gt;
@@ -613,10 +613,10 @@ All parameters optional except for userId
     
     <item>
       <title>The Exchange</title>
-      <link>http://apidocs.sportdx.github.com/the-exchange/</link>
+      <link>https://sdxrepo.github.io/the-exchange/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://apidocs.sportdx.github.com/the-exchange/</guid>
+      <guid>https://sdxrepo.github.io/the-exchange/</guid>
       <description>
 
 &lt;h1 id=&#34;the-exchange&#34;&gt;The Exchange&lt;/h1&gt;
@@ -810,10 +810,10 @@ All parameters optional except for userId
     
     <item>
       <title>Articles</title>
-      <link>http://apidocs.sportdx.github.com/articles/</link>
+      <link>https://sdxrepo.github.io/articles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://apidocs.sportdx.github.com/articles/</guid>
+      <guid>https://sdxrepo.github.io/articles/</guid>
       <description>
 
 &lt;h1 id=&#34;articles&#34;&gt;Articles&lt;/h1&gt;
@@ -918,10 +918,10 @@ All parameters optional except for userId
     
     <item>
       <title>Payments</title>
-      <link>http://apidocs.sportdx.github.com/payments/</link>
+      <link>https://sdxrepo.github.io/payments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://apidocs.sportdx.github.com/payments/</guid>
+      <guid>https://sdxrepo.github.io/payments/</guid>
       <description>
 
 &lt;h1 id=&#34;payments&#34;&gt;Payments&lt;/h1&gt;
@@ -979,10 +979,10 @@ We do NOT store sensitive data. `cardNumber` would be just the last 4 digits.
     
     <item>
       <title>Errors</title>
-      <link>http://apidocs.sportdx.github.com/errors/</link>
+      <link>https://sdxrepo.github.io/errors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://apidocs.sportdx.github.com/errors/</guid>
+      <guid>https://sdxrepo.github.io/errors/</guid>
       <description>
 
 &lt;h1 id=&#34;errors&#34;&gt;Errors&lt;/h1&gt;

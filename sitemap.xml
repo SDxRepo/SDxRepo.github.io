@@ -2,43 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://apidocs.sportdx.github.com/</loc>
+    <loc>https://sdxrepo.github.io/</loc>
   </url>
   
   <url>
-    <loc>http://apidocs.sportdx.github.com/user-registration/</loc>
+    <loc>https://sdxrepo.github.io/user-registration/</loc>
   </url>
   
   <url>
-    <loc>http://apidocs.sportdx.github.com/logging-in/</loc>
+    <loc>https://sdxrepo.github.io/logging-in/</loc>
   </url>
   
   <url>
-    <loc>http://apidocs.sportdx.github.com/user-management/</loc>
+    <loc>https://sdxrepo.github.io/user-management/</loc>
   </url>
   
   <url>
-    <loc>http://apidocs.sportdx.github.com/statistics/</loc>
+    <loc>https://sdxrepo.github.io/statistics/</loc>
   </url>
   
   <url>
-    <loc>http://apidocs.sportdx.github.com/the-exchange/</loc>
+    <loc>https://sdxrepo.github.io/the-exchange/</loc>
   </url>
   
   <url>
-    <loc>http://apidocs.sportdx.github.com/articles/</loc>
+    <loc>https://sdxrepo.github.io/articles/</loc>
   </url>
   
   <url>
-    <loc>http://apidocs.sportdx.github.com/payments/</loc>
+    <loc>https://sdxrepo.github.io/payments/</loc>
   </url>
   
   <url>
-    <loc>http://apidocs.sportdx.github.com/errors/</loc>
+    <loc>https://sdxrepo.github.io/errors/</loc>
   </url>
   
   <url>
-    <loc>http://apidocs.sportdx.github.com/</loc>
+    <loc>https://sdxrepo.github.io/</loc>
     <priority>0</priority>
   </url>
   

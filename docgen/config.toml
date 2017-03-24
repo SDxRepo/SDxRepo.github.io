@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "SportDx API Documentation"
-baseURL = "http://apidocs.sportdx.github.com/"
+baseURL = "https://sdxrepo.github.io/"
 canonifyURLs = true
 
 theme = "docuapi"
